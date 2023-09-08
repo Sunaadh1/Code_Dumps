@@ -15,7 +15,7 @@ from langchain.llms import OpenAI
 os.environ["OPENAI_API_KEY"] = "sk-..."
 
 def enter_pdf():
-    pdf_path =input("Enter the PDF File Name : ")
+    pdf_path =input("Enter the PDF file name : ")
     pdf_text = pdf_to_string(pdf_path)
     # print(pdf_text)
     return pdf_text
@@ -47,8 +47,8 @@ def embeddings():
     return embeddings
 
 def VectorDB(texts,embeddings):
-    print(type(texts))
-    print(type(embeddings))
+    # print(type(texts))
+    # print(type(embeddings))
     document_search = Chroma.from_texts(texts, embeddings)
     return document_search
 
@@ -64,11 +64,6 @@ def ChainRun(query,chain,document_search):
     docs = document_search.similarity_search(query)
     print(chain.run(input_documents=docs, question=query))
 
-
-
-# pdf_path =input("Enter the File Name : ")
-# pdf_text = pdf_to_string(pdf_path)
-# print(pdf_text)
 
 text=enter_pdf()
 # print(text)
