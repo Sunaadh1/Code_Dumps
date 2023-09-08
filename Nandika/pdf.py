@@ -12,7 +12,7 @@ import chromadb
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "sk-..."
 
 def enter_pdf():
     pdf_path =input("Enter the PDF File Name : ")
